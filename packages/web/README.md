@@ -11,6 +11,6 @@ npm install -g log4brains
 
 ## Documentation
 
-Update 2.0.7
+Update 2.0.9
 
 - [Log4brains README](https://github.com/thomvaill/log4brains/blob/master/README.md)

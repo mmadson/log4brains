@@ -156,7 +156,7 @@ export function AdrScene({ projectName, currentAdr }: AdrSceneProps) {
 
           <div className={classes.bottomInfo}>
             <Typography className={classes.bottomInfoText}>
-              Last edited by {currentAdr.authors.join(", ")}
+              Last edited by {currentAdr.authors?.join(", ") ?? "Anonymous"}
             </Typography>
             <Typography className={classes.bottomInfoText}>
               on {moment(currentAdr.lastEditDate).format("lll")}
