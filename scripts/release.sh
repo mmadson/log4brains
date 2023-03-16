@@ -34,8 +34,7 @@ read -rp "Press any key to continue or Ctrl+C to abort..."
 
 yarn lerna publish \
   --conventional-commits \
-  --exact \
-  --create-release github
+  --exact
 
 echo ""
 echo "Done!"
