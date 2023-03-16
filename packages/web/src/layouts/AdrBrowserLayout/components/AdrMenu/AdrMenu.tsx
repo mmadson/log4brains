@@ -122,11 +122,12 @@ const useStyles = makeStyles((theme: Theme) =>
 
 type Props = {
   adrs?: AdrLight[];
+  createAdrLink: string;
   currentAdrSlug?: string;
   className?: string;
 };
 
-export function AdrMenu({ adrs, currentAdrSlug, className, ...props }: Props) {
+export function AdrMenu({ createAdrLink, adrs, currentAdrSlug, className, ...props }: Props) {
   const classes = useStyles();
 
   const [newAdrOpen, setNewAdrOpen] = React.useState(false);
@@ -191,28 +192,26 @@ export function AdrMenu({ adrs, currentAdrSlug, className, ...props }: Props) {
       )}
 
       <Timeline className={classes.timeline}>
-        {mode === Log4brainsMode.preview && (
-          <TimelineItem className={classes.timelineItem}>
-            <TimelineOppositeContent
-              classes={{ root: classes.timelineOppositeContentRootAdd }}
-            />
-            <TimelineSeparator>
-              <Tooltip title="Create a new ADR">
-                <Fab
-                  size="small"
-                  color="primary"
-                  aria-label="create a new ADR"
-                  className={classes.newAdrFab}
-                  onClick={() => setNewAdrOpen(true)}
-                >
-                  <AddIcon />
-                </Fab>
-              </Tooltip>
-              <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent />
-          </TimelineItem>
-        )}
+        <TimelineItem className={classes.timelineItem}>
+          <TimelineOppositeContent
+            classes={{ root: classes.timelineOppositeContentRootAdd }}
+          />
+          <TimelineSeparator>
+            <Tooltip title="Create a new ADR">
+              <Fab
+                size="small"
+                color="primary"
+                aria-label="create a new ADR"
+                className={classes.newAdrFab}
+                href={createAdrLink}
+              >
+                <AddIcon />
+              </Fab>
+            </Tooltip>
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent />
+        </TimelineItem>
 
         {adrs.map((adr) => {
           const currentDateString = moment(

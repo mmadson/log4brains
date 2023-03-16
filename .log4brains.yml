@@ -3,6 +3,7 @@ project:
   name: Log4brains
   tz: Europe/Paris
   adrFolder: ./docs/adr
+  createAdrLink: #
 
   packages:
     - name: core

@@ -14,7 +14,7 @@ Mauris nec diam felis. Proin rutrum luctus augue malesuada eleifend. Phasellus l
 `;
 
 const Template: Story<IndexSceneProps> = (args) => (
-  <AdrBrowserLayout adrs={adrMocks.map(toAdrLight)}>
+  <AdrBrowserLayout adrs={adrMocks.map(toAdrLight)} {...args}>
     <IndexScene {...args} />
   </AdrBrowserLayout>
 );

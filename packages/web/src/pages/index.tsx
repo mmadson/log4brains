@@ -10,6 +10,7 @@ export const getStaticProps: GetStaticProps<IndexSceneProps> = async () => {
   return {
     props: {
       projectName: getLog4brainsInstance().config.project.name,
+      createAdrLink: getLog4brainsInstance().config.project.createAdrLink,
       adrs: (await getLog4brainsInstance().searchAdrs()).map(toAdrLight), // For a faster 1st load and SEO
       markdown: await getIndexPageMarkdown(),
       l4bVersion: getConfig().serverRuntimeConfig.VERSION

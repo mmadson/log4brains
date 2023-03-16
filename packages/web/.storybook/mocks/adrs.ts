@@ -1,4 +1,4 @@
-import { AdrDtoStatus } from "@log4brains/core";
+import { AdrDtoStatus } from "@madm4ttus3r/l4bcore";
 import { Adr } from "../../src/types";
 
 export const adrMocks = [
@@ -46,7 +46,7 @@ The "log4brains patch" performs the following modifications to the original temp
     },
     creationDate: new Date(2020, 1, 1).toJSON(),
     lastEditDate: new Date(2020, 10, 26).toJSON(),
-    lastEditAuthor: "John Doe",
+    authors: ["John Doe"],
     publicationDate: new Date(2020, 1, 1).toJSON(),
     repository: {
       provider: "gitlab",
@@ -65,7 +65,7 @@ The "log4brains patch" performs the following modifications to the original temp
     body: { enhancedMdx: "" },
     creationDate: new Date(2020, 1, 2).toJSON(),
     lastEditDate: new Date(2020, 10, 26).toJSON(),
-    lastEditAuthor: "John Doe",
+    authors: ["John Doe"],
     publicationDate: null,
     repository: {
       provider: "github",
@@ -84,7 +84,7 @@ The "log4brains patch" performs the following modifications to the original temp
     body: { enhancedMdx: "Test" },
     creationDate: new Date(2020, 1, 6).toJSON(),
     lastEditDate: new Date(2020, 1, 7).toJSON(),
-    lastEditAuthor: "John Doe",
+    authors: ["John Doe"],
     publicationDate: new Date(2020, 1, 8).toJSON(),
     repository: {
       provider: "bitbucket",
@@ -114,7 +114,7 @@ Ipsum Dolor
     },
     creationDate: new Date(2020, 4, 4).toJSON(),
     lastEditDate: new Date(2020, 10, 26).toJSON(),
-    lastEditAuthor: "John Doe",
+    authors: ["John Doe"],
     publicationDate: null,
     repository: {
       provider: "github",
@@ -133,7 +133,7 @@ Ipsum Dolor
     body: { enhancedMdx: "" },
     creationDate: new Date(2020, 4, 4).toJSON(),
     lastEditDate: new Date(2020, 10, 26).toJSON(),
-    lastEditAuthor: "John Doe",
+    authors: ["John Doe"],
     publicationDate: null,
     repository: {
       provider: "github",
@@ -165,7 +165,7 @@ Ipsum Dolor
     body: { enhancedMdx: "" },
     creationDate: new Date(2020, 4, 5).toJSON(),
     lastEditDate: new Date(2020, 10, 26).toJSON(),
-    lastEditAuthor: "John Doe",
+    authors: ["John Doe"],
     publicationDate: null,
     repository: {
       provider: "generic",
@@ -188,7 +188,7 @@ Ipsum Dolor
     },
     creationDate: new Date(2020, 4, 5).toJSON(),
     lastEditDate: new Date(2020, 10, 26).toJSON(),
-    lastEditAuthor: "John Doe",
+    authors: ["John Doe"],
     publicationDate: null,
     repository: {
       provider: "github",

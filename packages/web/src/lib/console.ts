@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import chalk from "chalk";
-import { ConsoleCapturer } from "@log4brains/cli-common";
+import { ConsoleCapturer } from "@madm4ttus3r/l4bcli-common";
 
 /**
  * #NEXTJS-HACK

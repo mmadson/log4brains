@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { AdrDto } from "@log4brains/core";
+import { AdrDto } from "@madm4ttus3r/l4bcore";
 import lunr from "lunr";
 
 type AdrForSearch = {

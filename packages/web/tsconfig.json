@@ -8,6 +8,9 @@
     "rootDir": "src",
     "outDir": "dist"
   },
+  "paths": {
+    "react": [ "./node_modules/@types/react" ]
+  },
   "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx"],
   "exclude": [
     "node_modules",

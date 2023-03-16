@@ -1,5 +1,5 @@
-import { Log4brains, SearchAdrsFilters, AdrDtoStatus } from "@log4brains/core";
-import type { AppConsole } from "@log4brains/cli-common";
+import { Log4brains, SearchAdrsFilters, AdrDtoStatus } from "@madm4ttus3r/l4bcore";
+import type { AppConsole } from "@madm4ttus3r/l4bcli-common";
 
 type Deps = {
   l4bInstance: Log4brains;
