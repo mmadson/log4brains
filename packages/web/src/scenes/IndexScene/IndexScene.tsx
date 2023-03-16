@@ -9,6 +9,7 @@ export type IndexSceneProps = {
   createAdrLink: string;
   markdown: string;
   l4bVersion: string;
+  repositoryUrl: string;
 };
 
 export function IndexScene({ projectName, markdown }: IndexSceneProps) {

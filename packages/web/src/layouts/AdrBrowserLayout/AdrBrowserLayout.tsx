@@ -237,6 +237,7 @@ export type AdrBrowserLayoutProps = {
   children: React.ReactNode;
   routing?: boolean;
   l4bVersion: string;
+  repositoryUrl: string;
 };
 
 export function AdrBrowserLayout({
@@ -247,7 +248,8 @@ export function AdrBrowserLayout({
   currentAdr,
   children,
   routing = false,
-  l4bVersion
+  l4bVersion,
+  repositoryUrl
 }: AdrBrowserLayoutProps) {
   const classes = useStyles();
   const router = useRouter();
@@ -352,7 +354,7 @@ export function AdrBrowserLayout({
       <AppBar position="fixed" className={classes.appBar}>
         {routing && <RoutingProgress />}
         <Toolbar>
-          <a target="_blank" rel="noreferrer" href={currentAdr?.repository?.url} aria-label="View source in GitLab"
+          <a target="_blank" rel="noreferrer" href={repositoryUrl} aria-label="View source in GitLab"
              title="View source in GitLab" style={{zIndex: 99999}}>
             <svg xmlns="http://www.w3.org/2000/svg"
                  style={{fill: "#fff", color: "#24292e", position: "absolute", top: 0, right: 0}} viewBox="0 0 250 250"

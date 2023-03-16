@@ -3,7 +3,11 @@ project:
   name: Log4brains
   tz: Europe/Paris
   adrFolder: ./docs/adr
-  createAdrLink: #
+  createAdrLink: "#"
+  repository:
+    url: "#"
+    provider: generic
+    viewFileUriPattern: /-/edit/main/%path
 
   packages:
     - name: core

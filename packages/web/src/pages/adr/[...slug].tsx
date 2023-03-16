@@ -43,7 +43,8 @@ export const getStaticProps: GetStaticProps<AdrSceneProps> = async ({
           ? await l4bInstance.getAdrBySlug(currentAdr.supersededBy)
           : undefined
       ),
-      l4bVersion: getConfig().serverRuntimeConfig.VERSION
+      l4bVersion: getConfig().serverRuntimeConfig.VERSION,
+      repositoryUrl: l4bInstance.config.project.repository?.url ?? "#",
     },
     revalidate: 1
   };

@@ -60,6 +60,7 @@ export type AdrSceneProps = {
   currentAdr: Adr;
   createAdrLink: string;
   l4bVersion: string;
+  repositoryUrl: string;
 };
 
 export function AdrScene({ projectName, currentAdr }: AdrSceneProps) {

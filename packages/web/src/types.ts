@@ -7,7 +7,7 @@ export type Adr = Omit<AdrDto, "supersededBy" | "body"> & {
 
 export type AdrLight = Pick<
   Adr,
-  "slug" | "package" | "title" | "status" | "creationDate" | "publicationDate" | "repository"
+  "slug" | "package" | "title" | "status" | "creationDate" | "publicationDate"
 >;
 
 export function toAdrLight(adr: AdrDto | Adr | AdrLight): AdrLight {
@@ -17,12 +17,7 @@ export function toAdrLight(adr: AdrDto | Adr | AdrLight): AdrLight {
     title: adr.title,
     status: adr.status,
     creationDate: adr.creationDate,
-    publicationDate: adr.publicationDate,
-    repository: {
-      provider: adr.repository?.provider as unknown as string,
-      url: adr.repository?.url as unknown as string,
-      viewUrl: adr.repository?.viewUrl as unknown as string
-    }
+    publicationDate: adr.publicationDate
   };
 }
 
