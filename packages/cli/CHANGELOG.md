@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/mmadson/log4brains/compare/v1.0.1...v2.0.1) (2023-03-16)
+
+**Note:** Version bump only for package @madm4ttus3r/l4bcli
+
+
+
+
+
+
 # [1.0.0](https://github.com/thomvaill/log4brains/compare/v1.0.0-beta.13...v1.0.0) (2022-09-22)
 
 

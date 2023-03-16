@@ -1,6 +1,6 @@
 {
   "name": "@madm4ttus3r/l4bcli",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Log4brains architecture knowledge base CLI",
   "keywords": [
     "log4brains"
@@ -37,8 +37,8 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@madm4ttus3r/l4bcli-common": "2.0.0",
-    "@madm4ttus3r/l4bcore": "2.0.0",
+    "@madm4ttus3r/l4bcli-common": "2.0.1",
+    "@madm4ttus3r/l4bcore": "2.0.1",
     "commander": "6.1.0",
     "execa": "5.0.0",
     "terminal-link": "2.1.1"
