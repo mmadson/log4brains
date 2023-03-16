@@ -38,5 +38,7 @@ const l4b = Log4brains.create(process.cwd());
 
 ## Documentation
 
+Update
+
 - TypeDoc documentation (TODO)
 - [Log4brains README](https://github.com/thomvaill/log4brains/blob/master/README.md)
