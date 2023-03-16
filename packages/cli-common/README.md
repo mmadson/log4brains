@@ -15,7 +15,7 @@ npm install -g log4brains
 
 ## Development
 
-Update
+Update 2.0.7
 
 ```bash
 yarn dev:test
