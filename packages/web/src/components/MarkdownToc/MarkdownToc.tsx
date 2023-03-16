@@ -7,6 +7,7 @@ import {
   TocBuilder as TocModelBuilder
 } from "../../lib/toc-utils";
 import { MarkdownHeading, MarkdownHeadingProps } from "../MarkdownHeading";
+import {FontWeightProperty} from "csstype";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
       }
     },
     title: {
-      fontWeight: theme.typography.fontWeightBold,
+      fontWeight: theme.typography.fontWeightBold as FontWeightProperty,
       paddingBottom: theme.spacing(1)
     },
     tocUl: {

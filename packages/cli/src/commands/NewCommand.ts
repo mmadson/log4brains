@@ -1,8 +1,8 @@
 /* eslint-disable no-await-in-loop */
 import path from "path";
-import { Log4brains, Log4brainsError } from "@log4brains/core";
+import { Log4brains, Log4brainsError } from "@madm4ttus3r/l4bcore";
 import fs, { promises as fsP } from "fs";
-import type { AppConsole } from "@log4brains/cli-common";
+import type { AppConsole } from "@madm4ttus3r/l4bcli-common";
 import { previewAdr } from "../utils";
 
 type Deps = {

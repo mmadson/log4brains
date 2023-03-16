@@ -16,8 +16,10 @@
     "tooling"
   ],
   "author": "Thomas Vaillant <thomvaill@bluebricks.dev>",
+  "contributors": [
+    "Matt Madson <npm@matthewmadson.com>"
+  ],
   "license": "Apache-2.0",
-  "private": false,
   "publishConfig": {
     "access": "public"
   },
@@ -33,9 +35,7 @@
   "files": [
     "dist"
   ],
-  "bin": {
-    "log4brains": "./dist/log4brains"
-  },
+  "bin": "./dist/log4brains",
   "scripts": {
     "dev": "nodemon",
     "build": "tsc --build tsconfig.build.json && copyfiles -u 1 src/log4brains dist",
@@ -47,15 +47,15 @@
     "unlink": "yarn unlink"
   },
   "dependencies": {
-    "@log4brains/cli": "1.0.0",
-    "@log4brains/cli-common": "1.0.0",
-    "@log4brains/init": "1.0.0",
-    "@log4brains/web": "1.0.1",
-    "chalk": "^4.1.0",
-    "commander": "^6.1.0",
-    "esm": "^3.2.25"
+    "@madm4ttus3r/l4bcli": "1.0.0",
+    "@madm4ttus3r/l4bcli-common": "1.0.0",
+    "@madm4ttus3r/l4binit": "1.0.0",
+    "@madm4ttus3r/l4bweb": "1.0.1",
+    "chalk": "4.1.0",
+    "commander": "6.1.0",
+    "esm": "3.2.25"
   },
   "devDependencies": {
-    "copyfiles": "^2.4.0"
+    "copyfiles": "2.4.0"
   }
 }

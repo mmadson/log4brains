@@ -1,5 +1,5 @@
 import path from "path";
-import { Log4brains } from "@log4brains/core";
+import { Log4brains } from "@madm4ttus3r/l4bcore";
 import { getConfig } from "../next";
 
 let instance: Log4brains;

@@ -20,7 +20,7 @@ type Props = {
   file?: AdrFile; // set by the repository after save()
   creationDate: Date; // set by the repository after save() or automatically set to now()
   lastEditDate: Date; // set by the repository after save() or automatically set to now()
-  lastEditAuthor: Author; // set by the repository after save() or automatically set to anonymous
+  authors: Author[]; // set by the repository after save() or automatically set to anonymous
 };
 
 export class Adr extends AggregateRoot<Props> {
@@ -35,13 +35,13 @@ export class Adr extends AggregateRoot<Props> {
   constructor(
     props: WithOptional<
       Props,
-      "creationDate" | "lastEditDate" | "lastEditAuthor"
+      "creationDate" | "lastEditDate" | "authors"
     >
   ) {
     super({
       creationDate: props.creationDate || new Date(),
       lastEditDate: props.lastEditDate || new Date(),
-      lastEditAuthor: props.lastEditAuthor || Author.createAnonymous(),
+      authors: props.authors || [Author.createAnonymous()],
       ...props
     });
   }
@@ -87,8 +87,16 @@ export class Adr extends AggregateRoot<Props> {
     return this.props.lastEditDate;
   }
 
-  get lastEditAuthor(): Author {
-    return this.props.lastEditAuthor;
+  get authors(): Author[] {
+    const authors = this.body.getHeaderMetadata("authors");
+    if (
+      !authors ||
+      authors.trim() === "" ||
+      authors === "[list everyone involved in authoring the decision]"
+    ) {
+      return this.props.authors;
+    }
+    return authors.split(/\s*[,]{1}\s*/).map((author) => new Author(author.trim()));
   }
 
   get title(): string | undefined {
@@ -163,7 +171,7 @@ export class Adr extends AggregateRoot<Props> {
     if (
       !deciders ||
       deciders.trim() === "" ||
-      deciders === "[list everyone involved in the decision] <!-- optional -->"
+      deciders === "[list everyone involved in the decision]"
     ) {
       return [];
     }
@@ -196,7 +204,7 @@ export class Adr extends AggregateRoot<Props> {
     bodyCopy.deleteFirstH1Title();
 
     // Remove header metadata
-    ["status", "deciders", "date", "tags"].forEach((metadata) =>
+    ["status", "authors", "deciders", "date", "tags"].forEach((metadata) =>
       bodyCopy.deleteHeaderMetadata(metadata)
     );
 

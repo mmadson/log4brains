@@ -3,6 +3,7 @@ project:
   name: log4brains-tests-ro
   tz: Europe/Paris
   adrFolder: ./docs/adr
+  createLinkUrl: "#"
 
   packages:
     - name: package1

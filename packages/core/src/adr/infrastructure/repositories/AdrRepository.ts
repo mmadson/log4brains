@@ -228,7 +228,7 @@ export class AdrRepository implements IAdrRepository {
                   ...baseAdrProps,
                   creationDate: gitMetadata.creationDate,
                   lastEditDate: gitMetadata.lastEditDate,
-                  lastEditAuthor: gitMetadata.lastEditAuthor
+                  authors: [gitMetadata.lastEditAuthor]
                 });
               }
 
@@ -241,7 +241,7 @@ export class AdrRepository implements IAdrRepository {
                 ...baseAdrProps,
                 creationDate: lastEditDate,
                 lastEditDate,
-                lastEditAuthor: await this.getAnonymousAuthor()
+                authors: [await this.getAnonymousAuthor()]
               });
             });
         })

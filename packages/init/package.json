@@ -1,13 +1,15 @@
 {
-  "name": "@log4brains/init",
+  "name": "@madm4ttus3r/l4binit",
   "version": "1.0.0",
   "description": "Log4brains architecture knowledge base initialization CLI",
   "keywords": [
     "log4brains"
   ],
   "author": "Thomas Vaillant <thomvaill@bluebricks.dev>",
+  "contributors": [
+    "Matt Madson <npm@matthewmadson.com>"
+  ],
   "license": "Apache-2.0",
-  "private": false,
   "publishConfig": {
     "access": "public"
   },
@@ -38,18 +40,18 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@log4brains/cli-common": "1.0.0",
-    "chalk": "^4.1.0",
-    "commander": "^6.1.0",
-    "execa": "^4.1.0",
-    "mkdirp": "^1.0.4",
-    "moment-timezone": "^0.5.32",
-    "terminal-link": "^2.1.1",
-    "yaml": "^1.10.0"
+    "@madm4ttus3r/l4bcli-common": "1.0.0",
+    "chalk": "4.1.0",
+    "commander": "6.1.0",
+    "execa": "4.1.0",
+    "mkdirp": "1.0.4",
+    "moment-timezone": "0.5.32",
+    "terminal-link": "2.1.1",
+    "yaml": "1.10.0"
   },
   "devDependencies": {
-    "@types/edit-json-file": "^1.4.0",
-    "esm": "^3.2.25",
-    "ts-node": "^9.0.0"
+    "@types/edit-json-file": "1.4.0",
+    "esm": "3.2.25",
+    "ts-node": "9.0.0"
   }
 }

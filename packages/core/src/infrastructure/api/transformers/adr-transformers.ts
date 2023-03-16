@@ -42,7 +42,7 @@ export async function adrToDto(
     },
     creationDate: adr.creationDate.toJSON(),
     lastEditDate: adr.lastEditDate.toJSON(),
-    lastEditAuthor: adr.lastEditAuthor.name,
+    authors: adr.authors.map(author => author.name),
     publicationDate: adr.publicationDate?.toJSON() || null,
     file: {
       relativePath: adr.file.path.pathRelativeToCwd,
@@ -51,6 +51,7 @@ export async function adrToDto(
     ...(repositoryConfig && repositoryConfig.provider && viewUrl
       ? {
           repository: {
+            url: repositoryConfig.url as string,
             provider: repositoryConfig.provider,
             viewUrl
           }

@@ -1,6 +1,6 @@
-import { Log4brainsError } from "@log4brains/core";
+import { Log4brainsError } from "@madm4ttus3r/l4bcore";
 import { NextApiRequest, NextApiResponse } from "next";
-import { AppConsole } from "@log4brains/cli-common";
+import { AppConsole } from "@madm4ttus3r/l4bcli-common";
 import { getLog4brainsInstance } from "../../../lib/core-api";
 
 // TODO: get the global singleton of AppConsole instead of re-creating it

@@ -5,3 +5,4 @@ project:
   name: noop
   tz: Etc/UTC
   adrFolder: ./noop-adrs
+  createAdrLink: "#"

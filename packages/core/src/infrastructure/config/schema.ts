@@ -37,6 +37,7 @@ type ProjectConfig = Readonly<{
   name: string;
   tz: string;
   adrFolder: string;
+  createAdrLink: string;
   packages?: ProjectPackageConfig[];
   repository?: GitRepositoryConfig;
 }>;
@@ -45,11 +46,13 @@ const projectSchema = Joi.object({
   name: Joi.string().required(),
   tz: Joi.string().required(),
   adrFolder: Joi.string().required(),
+  createAdrLink: Joi.string().required(),
   packages: Joi.array().items(projectPackageSchema),
   repository: gitRepositorySchema
 });
 
 export type Log4brainsConfig = Readonly<{
+  createAdrLink: string;
   project: ProjectConfig;
 }>;
 

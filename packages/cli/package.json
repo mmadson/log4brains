@@ -1,13 +1,15 @@
 {
-  "name": "@log4brains/cli",
+  "name": "@madm4ttus3r/l4bcli",
   "version": "1.0.0",
   "description": "Log4brains architecture knowledge base CLI",
   "keywords": [
     "log4brains"
   ],
   "author": "Thomas Vaillant <thomvaill@bluebricks.dev>",
+  "contributors": [
+    "Matt Madson <npm@matthewmadson.com>"
+  ],
   "license": "Apache-2.0",
-  "private": false,
   "publishConfig": {
     "access": "public"
   },
@@ -35,10 +37,10 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@log4brains/cli-common": "1.0.0",
-    "@log4brains/core": "1.0.0",
-    "commander": "^6.1.0",
-    "execa": "^5.0.0",
-    "terminal-link": "^2.1.1"
+    "@madm4ttus3r/l4bcli-common": "1.0.0",
+    "@madm4ttus3r/l4bcore": "1.0.0",
+    "commander": "6.1.0",
+    "execa": "5.0.0",
+    "terminal-link": "2.1.1"
   }
 }

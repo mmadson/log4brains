@@ -2,12 +2,12 @@ import fs from "fs";
 import path from "path";
 import commander from "commander";
 import terminalLink from "terminal-link";
-import { Log4brains, Log4brainsError } from "@log4brains/core";
+import { Log4brains, Log4brainsError } from "@madm4ttus3r/l4bcore";
 import {
   AppConsole,
   FailureExit,
   Log4brainsConfigNotFound
-} from "@log4brains/cli-common";
+} from "@madm4ttus3r/l4bcli-common";
 
 import {
   ListCommand,

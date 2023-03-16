@@ -7,7 +7,7 @@ import path from "path";
 import mkdirp from "mkdirp";
 import { makeBadge } from "badge-maker";
 import { promises as fsP } from "fs";
-import type { AppConsole } from "@log4brains/cli-common";
+import type { AppConsole } from "@madm4ttus3r/l4bcli-common";
 import { getLog4brainsInstance } from "../../lib/core-api";
 import { getNextJsDir } from "../../lib/next";
 import { Search } from "../../lib/search";

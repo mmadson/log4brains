@@ -1,4 +1,4 @@
-import { AdrDtoStatus } from "@log4brains/core";
+import { AdrDtoStatus } from "@madm4ttus3r/l4bcore";
 import React from "react";
 import TestRenderer from "react-test-renderer";
 import { AdrHeader } from "./AdrHeader";
@@ -21,7 +21,7 @@ describe("AdrHeader", () => {
           },
           creationDate: new Date(2020, 0, 1).toJSON(),
           lastEditDate: new Date(2020, 0, 1).toJSON(),
-          lastEditAuthor: "John Doe",
+          authors: ["John Doe"],
           publicationDate: null,
           file: {
             relativePath: "test.md",
@@ -50,7 +50,7 @@ describe("AdrHeader", () => {
           },
           creationDate: new Date(2020, 0, 1).toJSON(),
           lastEditDate: new Date(2020, 0, 1).toJSON(),
-          lastEditAuthor: "John Doe",
+          authors: ["John Doe"],
           publicationDate: null,
           file: {
             relativePath: "test.md",
@@ -79,7 +79,7 @@ describe("AdrHeader", () => {
           },
           creationDate: new Date(2020, 0, 1).toJSON(),
           lastEditDate: new Date(2020, 0, 1).toJSON(),
-          lastEditAuthor: "John Doe",
+          authors: ["John Doe"],
           publicationDate: null,
           file: {
             relativePath: "test.md",
@@ -108,7 +108,7 @@ describe("AdrHeader", () => {
           },
           creationDate: new Date(2020, 0, 1).toJSON(),
           lastEditDate: new Date(2020, 0, 1).toJSON(),
-          lastEditAuthor: "John Doe",
+          authors: ["John Doe"],
           publicationDate: null,
           file: {
             relativePath: "test.md",
@@ -137,7 +137,7 @@ describe("AdrHeader", () => {
           },
           creationDate: new Date(2020, 0, 1).toJSON(),
           lastEditDate: new Date(2020, 0, 1).toJSON(),
-          lastEditAuthor: "John Doe",
+          authors: ["John Doe"],
           publicationDate: new Date(2020, 0, 2).toJSON(),
           file: {
             relativePath: "test.md",
@@ -166,7 +166,7 @@ describe("AdrHeader", () => {
           },
           creationDate: new Date(2020, 0, 1).toJSON(),
           lastEditDate: new Date(2020, 0, 1).toJSON(),
-          lastEditAuthor: "John Doe",
+          authors: ["John Doe"],
           publicationDate: new Date(2020, 0, 2).toJSON(),
           file: {
             relativePath: "test.md",
@@ -199,7 +199,7 @@ describe("AdrHeader", () => {
           },
           creationDate: new Date(2020, 0, 1).toJSON(),
           lastEditDate: new Date(2020, 0, 1).toJSON(),
-          lastEditAuthor: "John Doe",
+          authors: ["John Doe"],
           publicationDate: new Date(2020, 0, 2).toJSON(),
           file: {
             relativePath: "test.md",
@@ -232,7 +232,7 @@ describe("AdrHeader", () => {
           },
           creationDate: new Date(2020, 0, 1).toJSON(),
           lastEditDate: new Date(2020, 0, 1).toJSON(),
-          lastEditAuthor: "John Doe",
+          authors: ["John Doe"],
           publicationDate: new Date(2020, 0, 2).toJSON(),
           file: {
             relativePath: "test.md",
@@ -265,7 +265,7 @@ describe("AdrHeader", () => {
           },
           creationDate: new Date(2020, 0, 1).toJSON(),
           lastEditDate: new Date(2020, 0, 1).toJSON(),
-          lastEditAuthor: "John Doe",
+          authors: ["John Doe"],
           publicationDate: new Date(2020, 0, 2).toJSON(),
           file: {
             relativePath: "test.md",

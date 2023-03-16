@@ -24,7 +24,7 @@ export type AdrDto = Readonly<{
   }>;
   creationDate: string; // Comes from Git or filesystem
   lastEditDate: string; // Comes from Git or filesystem
-  lastEditAuthor: string; // Comes from Git (Git last author, or current Git user.name when unversioned, or "Anonymous" when Git is not installed)
+  authors: string[]; // Comes from Git (Git last author, or current Git user.name when unversioned, or "Anonymous" when Git is not installed)
   publicationDate: string | null; // Comes from the Markdown body
   file: Readonly<{
     relativePath: string;
@@ -32,6 +32,7 @@ export type AdrDto = Readonly<{
   }>;
   repository?: Readonly<{
     provider: GitProvider;
+    url: string;
     viewUrl: string;
   }>;
 }>;

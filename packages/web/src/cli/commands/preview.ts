@@ -3,7 +3,7 @@ import { createServer } from "http";
 import SocketIO from "socket.io";
 import chalk from "chalk";
 import open from "open";
-import type { AppConsole } from "@log4brains/cli-common";
+import type { AppConsole } from "@madm4ttus3r/l4bcli-common";
 import { getLog4brainsInstance } from "../../lib/core-api";
 import { getNextJsDir } from "../../lib/next";
 import { execNext } from "../../lib/console";
@@ -67,10 +67,10 @@ export async function previewCommand(
           srv.listen(port);
         })
     );
-  } catch (err) {
+  } catch (err: any) {
     appConsole.stopSpinner();
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    if (err.code === "EADDRINUSE") {
+    if (err?.code === "EADDRINUSE") {
       if (openBrowser && adrSlug) {
         appConsole.println(
           chalk.dim(
@@ -86,7 +86,7 @@ export async function previewCommand(
       );
       process.exit(1);
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    } else if (err.code === "EACCES") {
+    } else if (err?.code === "EACCES") {
       appConsole.fatal(
         `Impossible to use port ${port} (permission denied). Use the -p <PORT> option to select another one.`
       );

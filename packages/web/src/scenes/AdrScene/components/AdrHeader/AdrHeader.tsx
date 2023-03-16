@@ -127,6 +127,13 @@ export function AdrHeader({
     linkCopiedSnackSetOpened(false);
   };
 
+  const authorsIcon =
+    adr.authors.length > 1 ? (
+      <PeopleIcon className={classes.icon} fontSize="inherit" />
+    ) : (
+      <PersonIcon className={classes.icon} fontSize="inherit" />
+    );
+
   const decidersIcon =
     adr.deciders.length > 1 ? (
       <PeopleIcon className={classes.icon} fontSize="inherit" />
@@ -159,19 +166,27 @@ export function AdrHeader({
             </div>
           </div>
 
-          <Typography
-            variant="body2"
-            title={
-              adr.deciders.length > 0
-                ? `Decider${adr.deciders.length > 1 ? "s" : ""}`
-                : "Author"
-            }
-          >
-            {decidersIcon}{" "}
-            {adr.deciders.length > 0
-              ? adr.deciders.join(", ")
-              : adr.lastEditAuthor}
-          </Typography>
+          {(adr.authors && adr.authors.length > 0) ? (
+            <Typography
+              variant="body2"
+              title={`Author${adr.authors.length > 1 ? "s" : ""}`}
+            >
+              {authorsIcon}{" "}
+              {adr.authors.join(", ")}
+            </Typography>
+          ) : null
+          }
+
+          {(adr.deciders && adr.deciders.length > 0) ? (
+            <Typography
+              variant="body2"
+              title={`Decider${adr.deciders.length > 1 ? "s" : ""}`}
+            >
+              {decidersIcon}{" "}
+              {adr.deciders.join(", ")}
+            </Typography>
+          ) : null
+          }
 
           {adr.tags.length > 0 ? (
             <Typography variant="body2" title="Tags">

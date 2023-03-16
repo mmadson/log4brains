@@ -8,8 +8,8 @@ import mkdirp from "mkdirp";
 import yaml from "yaml";
 import path from "path";
 import moment from "moment-timezone";
-import type { AppConsole } from "@log4brains/cli-common";
-import { FailureExit } from "@log4brains/cli-common";
+import type { AppConsole } from "@madm4ttus3r/l4bcli-common";
+import { FailureExit } from "@madm4ttus3r/l4bcli-common";
 import { replaceAllInFile } from "../utils";
 
 const assetsPath = path.resolve(path.join(__dirname, "../../assets"));
@@ -33,6 +33,7 @@ type L4bYmlConfig = {
     name: string;
     tz: string;
     adrFolder: string;
+    createLinkUrl: string | undefined;
     packages?: L4bYmlPackageConfig[];
   };
 };
@@ -143,6 +144,14 @@ export class InitCommand {
           ]
         );
 
+    const createAdrLink = noInteraction
+      ? "#"
+      : await this.console.askInputQuestionAndValidate(
+        "What URL should the create ADR button point to?",
+        (answer) => !!answer.trim(),
+        name
+      );
+
     // Main ADR folder location
     let adrFolder = this.guessMainAdrFolderPath(cwd);
     if (adrFolder) {
@@ -221,6 +230,7 @@ export class InitCommand {
         name,
         tz: moment.tz.guess(),
         adrFolder: forceUnixPath(adrFolder),
+        createLinkUrl: createAdrLink,
         packages
       }
     };

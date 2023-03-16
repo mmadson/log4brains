@@ -3,7 +3,7 @@ import {
   AppConsole,
   FailureExit,
   Log4brainsConfigNotFound
-} from "@log4brains/cli-common";
+} from "@madm4ttus3r/l4bcli-common";
 import { createGlobalCli } from "./cli";
 
 const debug = !!process.env.DEBUG;
