@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.5](https://github.com/mmadson/log4brains/compare/v2.0.1...v2.0.5) (2023-03-16)
+
+**Note:** Version bump only for package @madm4ttus3r/l4bweb
+
+
+
+
+
 ## [2.0.1](https://github.com/mmadson/log4brains/compare/v1.0.1...v2.0.1) (2023-03-16)
 
 **Note:** Version bump only for package @madm4ttus3r/l4bweb

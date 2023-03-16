@@ -1,6 +1,6 @@
 {
   "name": "@madm4ttus3r/l4bweb",
-  "version": "2.0.1",
+  "version": "2.0.5",
   "description": "Log4brains architecture knowledge base web UI and static site generator",
   "keywords": [
     "log4brains"
@@ -51,8 +51,8 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@madm4ttus3r/l4bcli-common": "2.0.1",
-    "@madm4ttus3r/l4bcore": "2.0.1",
+    "@madm4ttus3r/l4bcli-common": "2.0.5",
+    "@madm4ttus3r/l4bcore": "2.0.5",
     "@material-ui/core": "4.11.0",
     "@material-ui/icons": "4.9.1",
     "@material-ui/lab": "4.0.0-alpha.56",
