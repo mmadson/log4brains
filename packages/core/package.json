@@ -1,6 +1,6 @@
 {
   "name": "@madm4ttus3r/l4bcore",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Log4brains architecture knowledge base core API",
   "keywords": [
     "log4brains"
@@ -13,10 +13,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/thomvaill/log4brains",
+  "homepage": "https://github.com/mmadson/log4brains",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thomvaill/log4brains",
+    "url": "https://github.com/mmadson/log4brains",
     "directory": "packages/core"
   },
   "engines": {

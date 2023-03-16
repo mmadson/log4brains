@@ -1,6 +1,6 @@
 {
-  "name": "log4brains",
-  "version": "1.0.1",
+  "name": "@madm4ttus3r/log4brains",
+  "version": "2.0.0",
   "description": "Log and publish your architecture decisions (ADR) with Log4brains",
   "keywords": [
     "log4brains",
@@ -23,10 +23,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/thomvaill/log4brains",
+  "homepage": "https://github.com/mmadson/log4brains",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thomvaill/log4brains",
+    "url": "https://github.com/mmadson/log4brains",
     "directory": "packages/global-cli"
   },
   "engines": {
@@ -47,10 +47,10 @@
     "unlink": "yarn unlink"
   },
   "dependencies": {
-    "@madm4ttus3r/l4bcli": "1.0.0",
-    "@madm4ttus3r/l4bcli-common": "1.0.0",
-    "@madm4ttus3r/l4binit": "1.0.0",
-    "@madm4ttus3r/l4bweb": "1.0.1",
+    "@madm4ttus3r/l4bcli": "2.0.0",
+    "@madm4ttus3r/l4bcli-common": "2.0.0",
+    "@madm4ttus3r/l4binit": "2.0.0",
+    "@madm4ttus3r/l4bweb": "2.0.0",
     "chalk": "4.1.0",
     "commander": "6.1.0",
     "esm": "3.2.25"

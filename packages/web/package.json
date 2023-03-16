@@ -1,6 +1,6 @@
 {
   "name": "@madm4ttus3r/l4bweb",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Log4brains architecture knowledge base web UI and static site generator",
   "keywords": [
     "log4brains"
@@ -14,10 +14,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/thomvaill/log4brains",
+  "homepage": "https://github.com/mmadson/log4brains",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thomvaill/log4brains",
+    "url": "https://github.com/mmadson/log4brains",
     "directory": "packages/web"
   },
   "engines": {
@@ -51,8 +51,8 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@madm4ttus3r/l4bcli-common": "1.0.0",
-    "@madm4ttus3r/l4bcore": "1.0.0",
+    "@madm4ttus3r/l4bcli-common": "2.0.0",
+    "@madm4ttus3r/l4bcore": "2.0.0",
     "@material-ui/core": "4.11.0",
     "@material-ui/icons": "4.9.1",
     "@material-ui/lab": "4.0.0-alpha.56",
