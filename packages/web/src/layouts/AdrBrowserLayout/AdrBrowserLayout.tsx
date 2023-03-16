@@ -1,12 +1,8 @@
 import React from "react";
 import {
   AppBar,
-  // Divider,
   Drawer,
   List,
-  // ListItem,
-  // ListItemIcon,
-  // ListItemText,
   Toolbar,
   Link as MuiLink,
   Typography,
@@ -18,6 +14,9 @@ import {
   Hidden,
   IconButton
 } from "@material-ui/core";
+import Select from '@material-ui/core/Select';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
 import { Menu as MenuIcon, Close as CloseIcon } from "@material-ui/icons";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 // import {
@@ -162,6 +161,23 @@ const useStyles = makeStyles((theme: CustomTheme) => {
       paddingBottom: theme.spacing(0.5),
       paddingRight: theme.spacing(3)
     },
+    adlPackageSelect: {
+      display: "flex",
+      justifyContent: "left",
+      paddingLeft: theme.spacing(2),
+      [theme.breakpoints.up("sm")]: {
+        paddingLeft: theme.spacing(3)
+      },
+      paddingBottom: theme.spacing(0.5),
+      paddingRight: theme.spacing(3)
+    },
+    packageSelectLabel: {
+      paddingTop:"7px",
+      minWidth: "100px"
+    },
+    packageSelectSelect: {
+
+    },
     adlTitle: {
       fontWeight: theme.typography.fontWeightBold as FontWeightProperty
     },
@@ -231,7 +247,7 @@ function buildAdrNav(currentAdr: AdrLight, adrs: AdrLight[]): AdrNav {
 export type AdrBrowserLayoutProps = {
   projectName: string;
   createAdrLink: string;
-  adrs?: AdrLight[]; // undefined -> loading, empty -> empty
+  adrs?: AdrLight[];
   adrsReloading?: boolean;
   currentAdr?: AdrLight;
   children: React.ReactNode;
@@ -255,10 +271,59 @@ export function AdrBrowserLayout({
   const router = useRouter();
 
   const [mobileDrawerOpen, setMobileDrawerOpen] = React.useState(false);
+  const [searchOpen, setSearchOpenState] = React.useState(false);
+  const [searchReallyOpen, setSearchReallyOpenState] = React.useState(false);
+
+  const [packages, setPackages] = React.useState(["all"]);
+  const [currentPackage, setCurrentPackage] = React.useState('All');
+  const [currentPackageAdrs, setCurrentPackageAdrs] = React.useState(adrs);
+
+  const [statuses, setStatuses] = React.useState(["all"]);
+  const [currentStatus, setCurrentStatus] = React.useState('All');
+  const [currentStatusAdrs, setCurrentStatusAdrs] = React.useState(adrs);
 
   const handleMobileDrawerToggle = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
   };
+
+  const handlePackageChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setCurrentPackage(event.target.value as string);
+    setCurrentStatus('All');
+  };
+
+  const handleStatusChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setCurrentStatus(event.target.value as string);
+  };
+
+  React.useEffect( () => {
+    setPackages([...new Set(adrs?.map(adr => {
+      return adr.package ? adr.package : "Global";
+    }))]);
+  }, [adrs]);
+
+  React.useEffect( () => {
+    setStatuses([...new Set(currentPackageAdrs?.map(adr => {
+      return adr.status ? adr.status : "Unknown";
+    }))]);
+  }, [currentPackageAdrs]);
+
+  React.useEffect( () => {
+    if (currentPackage === 'All'){
+      setCurrentPackageAdrs(adrs);
+    } else if (currentPackage === 'Global') {
+      setCurrentPackageAdrs(adrs?.filter(adr => adr.package === null))
+    } else {
+      setCurrentPackageAdrs(adrs?.filter(adr => adr.package === currentPackage))
+    }
+  }, [currentPackage, adrs]);
+
+  React.useEffect( () => {
+    if(currentStatus === 'All'){
+      setCurrentStatusAdrs(currentPackageAdrs);
+    } else {
+      setCurrentStatusAdrs(currentPackageAdrs?.filter(adr => adr.status === currentStatus))
+    }
+  }, [currentStatus, currentPackageAdrs]);
 
   React.useEffect(() => {
     const closeMobileDrawer = () => setMobileDrawerOpen(false);
@@ -267,9 +332,6 @@ export function AdrBrowserLayout({
       router?.events.off("routeChangeStart", closeMobileDrawer);
     };
   }, [router]);
-
-  const [searchOpen, setSearchOpenState] = React.useState(false);
-  const [searchReallyOpen, setSearchReallyOpenState] = React.useState(false);
 
   const drawer = (
     <div className={classes.drawerContainer}>
@@ -301,6 +363,39 @@ export function AdrBrowserLayout({
         </IconButton>
       </Toolbar>
 
+      <div className={classes.adlPackageSelect}>
+        <InputLabel className={classes.packageSelectLabel} id="package-select-label">Package</InputLabel>
+        <Select
+          className={classes.packageSelectSelect}
+          labelId="package-select-label"
+          id="package-select"
+          value={currentPackage}
+          onChange={handlePackageChange}
+        >
+          <MenuItem value='All'>All</MenuItem>
+          {packages.map(packageDetails => (
+            <MenuItem value={packageDetails} key={packageDetails}>{packageDetails}</MenuItem>
+          ))}
+        </Select>
+      </div>
+
+      <div className={classes.adlPackageSelect}>
+        <InputLabel className={classes.packageSelectLabel} id="status-select-label">Status</InputLabel>
+        <Select
+          className={classes.packageSelectSelect}
+          labelId="status-select-label"
+          id="status-select"
+          value={currentStatus}
+          onChange={handleStatusChange}
+        >
+          <MenuItem value='All'>All</MenuItem>
+          {statuses.map(statusDetails => (
+            <MenuItem value={statusDetails} key={statusDetails}>{statusDetails}</MenuItem>
+          ))}
+        </Select>
+
+      </div>
+
       <div className={classes.adlTitleAndSpinner}>
         <Typography variant="subtitle2" className={classes.adlTitle}>
           Decision log
@@ -311,9 +406,9 @@ export function AdrBrowserLayout({
         </Fade>
       </div>
 
-      <Grow in={adrs !== undefined} style={{ transformOrigin: "center left" }}>
+      <Grow in={currentStatusAdrs !== undefined} style={{ transformOrigin: "center left" }}>
         <AdrMenu
-          adrs={adrs}
+          adrs={currentStatusAdrs}
           createAdrLink={createAdrLink}
           currentAdrSlug={currentAdr?.slug}
           className={classes.adrMenu}

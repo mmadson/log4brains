@@ -5,7 +5,7 @@ project:
   adrFolder: ./docs/adr
   createAdrLink: "#"
   repository:
-    url: "#"
+    url: "https://gitlab-master.nvidia.com/hwinf-das/apps/nrg/nrg-adrs"
     provider: generic
     viewFileUriPattern: /-/edit/main/%path
 
